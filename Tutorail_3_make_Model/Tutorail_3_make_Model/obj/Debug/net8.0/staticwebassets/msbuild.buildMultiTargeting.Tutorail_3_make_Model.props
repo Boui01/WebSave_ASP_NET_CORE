@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Tutorail_3_make_Model.props" />
+</Project>

@@ -1,0 +1,91 @@
+---------------------------------------- เชื่อมฐานข้อมูล ----------------------------------------
+ในไฟล์ appsetting.json
+- ใส่คำสั่ง **ต้องอยู่ในบรรทัดเดียวกันเท่านั้น**
+ "ConnectionStrings": {"DefaultConnection": "Server=ชื่อ server ตัวอย่าง (Bou\\SQLEXPRESS); Database=ชื่อฐานข้อมูล ตัวอย่าง(WebDB); Trusted_Connection=True; TrustServerCertificate=True" };
+
+
+---------------------------------------- ดาวโหลด package ----------------------------------------
+แถบ Project/manage Nuget package/Browse 
+
+search
+	1. "entityframeworkcore" เลือก Microsoft.EntityFrameworkCore
+	2. "entityframeworkcore.core" เลือก  Microsoft.EntityFrameworkCore.Tools
+	3. "entityframeworkcore.sqlServer" เลือก Microsoft.EntityFrameworkCore.SqlServer
+
+
+
+
+
+---------------------------------------- เช็ค package ที่ติดตั้ง ---------------------------------------------
+Dependencies / Packages / ชื่อ packgage
+
+------------- สร้างไฟล์ Application Context เพื่อส่งเข้า SQL Server ----------
+สร้าง Folder -> ชื่ออะไรก็ได้
+ส้ร้าง Class -> ชื่่ออะไรก็ได้ หรือ ApplicationDBContext.cs
+
+using Microsoft.EntityFrameworkCore;
+
+{
+    public class "ชื่อ ไฟล์ หรือ ApplicationDBContext":DbContext
+    {
+        public "ชื่อ ไฟล์ หรือ ApplicationDBContext"(DbContextOptions<ApplicationDBContext> options) : base(options)
+        {
+
+        }
+
+        // -------- แทน Model Web นำไปสร้างฐานข้อมูลทั้ชื่อ Web ---------
+        public DbSet<Web> Webs { get; set; }
+    }
+}
+
+
+***** ถ้ามี Type Time หรือ เวลาให้สร้างสิ่งนี้******
+
+สร้างไฟล์ ApplicationDBContextFactory.cs ใน  Folder ที่ Application Context อยู่
+
+public class ApplicationDBContextFactory : IDesignTimeDbContextFactory<ApplicationDBContext>
+{
+      public ApplicationDBContext CreateDbContext(string[] args)
+      {
+           IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDBContext>();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+
+            return new ApplicationDBContext(optionsBuilder.Options);
+      }
+}
+
+
+
+
+
+
+---------------------------------------- สร้างบริการเชื่อมฐานข้อมูลส่ง Application Context ----------------------------------------
+builder.Services.AddDbContext<"ชื่อ ไฟล์ หรือ ApplicationDBContext">(
+    option => option.UseSqlServer( builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+
+
+
+
+
+
+---------------------------------------- วิธีสร้างฐานข้อมูลผ่าน Package manager console ----------------------------------------
+Tools / Nuget package maneger / Package manager console
+
+พิมพ์คำสั่ง 
+
+** คำสั่งสร้างตัวไฟล์ Migration เชื่อมฐานข้อมูลทั้งหมดโดยอิงจาก คำสั่งในไฟล์ Application Context คำสั่งชื่อ  public DbSet<Web> Webs { get; set; } **
+- add-migration ชื่อฟังก์ชั่้้น
+
+เช็คไปที่  Folder / migration  
+
+** คำสั่งสร้างฐานข้อมูลเข้าไปใน Server **
+- update-database
+
+

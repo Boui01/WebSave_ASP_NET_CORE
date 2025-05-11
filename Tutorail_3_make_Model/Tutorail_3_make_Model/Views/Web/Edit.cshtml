@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Web;
+@{
+}
+<h1>Edit page</h1>
+<form method="POST" asp-controller="Web" asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="nameLink"></label>
+        <input type="text" asp-for="nameLink" class="form-control" />
+        <span asp-validation-for="nameLink" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="link"></label>
+        <input type="text" asp-for="link" class="form-control" />
+        <span asp-validation-for="link" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input hidden type="text" asp-for="create_at" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info mt-3">อัพเดต</button>
+</form>
