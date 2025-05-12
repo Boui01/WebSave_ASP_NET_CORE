@@ -4724,19 +4724,19 @@
   },
   "packageFolders": {
     "C:\\Users\\cecez\\.nuget\\packages\\": {},
-    "F:\\Program\\Code\\VSC(ASP.net_core)Shared components tools\\NuGetPackages": {}
+    "D:\\Program\\Visual_Studio_Community\\VSC_Tool&SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Backup_MyPC\\Code\\save_code_online\\ASP_NET_core\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\Tutorail_3_make_Model.csproj",
+      "projectUniqueName": "D:\\Mycode\\ASP_NET_CORE\\WebSave_ASP_NET_CORE\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\Tutorail_3_make_Model.csproj",
       "projectName": "Tutorail_3_make_Model",
-      "projectPath": "F:\\Backup_MyPC\\Code\\save_code_online\\ASP_NET_core\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\Tutorail_3_make_Model.csproj",
+      "projectPath": "D:\\Mycode\\ASP_NET_CORE\\WebSave_ASP_NET_CORE\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\Tutorail_3_make_Model.csproj",
       "packagesPath": "C:\\Users\\cecez\\.nuget\\packages\\",
-      "outputPath": "F:\\Backup_MyPC\\Code\\save_code_online\\ASP_NET_core\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\obj\\",
+      "outputPath": "D:\\Mycode\\ASP_NET_CORE\\WebSave_ASP_NET_CORE\\Tutorail_3_make_Model\\Tutorail_3_make_Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "F:\\Program\\Code\\VSC(ASP.net_core)Shared components tools\\NuGetPackages"
+        "D:\\Program\\Visual_Studio_Community\\VSC_Tool&SDK\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\cecez\\AppData\\Roaming\\NuGet\\NuGet.Config",

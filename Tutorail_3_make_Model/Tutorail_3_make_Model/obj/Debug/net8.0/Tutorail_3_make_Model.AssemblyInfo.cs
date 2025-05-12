@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tutorail_3_make_Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43d5be5ed0a9ab675d04ca0c4b0fe781ed7b21fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tutorail_3_make_Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tutorail_3_make_Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
